@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0
+}
+
+.fly-container, .wood {
+  width: 435px;
+  height: 450px;
+}
+
+.fly-container {
+  position: relative;
+  margin: 20px auto;
+}
+
+.way {
+  -moz-animation: float 3s ease-in-out infinite;
+  -webkit-animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
+  position: absolute;
+  top: 100px;
+}
+
+.wood {
+  background: url(helicopter.png);
+  width: 435px;
+  height: 400px;
+  animation: fly .2s steps(4) infinite;
+  -webkit-animation: fly .2s steps(4) infinite;
+  -moz-animation: fly .2s steps(4) infinite;
+
+}
+
+.pass {
+  width: 435px;
+  height: 450px;
+  -moz-animation: pass 5s linear infinite;
+  -webkit-animation: pass 5s linear infinite;
+  animation: pass 5s linear infinite;
+  position: absolute;
+  left: -435px;
+}
+
+.fly-content-wood {
+  position: absolute;
+  top: 130px;
+  left: 10px;
+  width: 415px;
+  height: 260px;
+}
+
+@keyframes fly {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -1740px;
+  }
+}
+
+@-webkit-keyframes fly {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -1740px;
+  }
+}
+
+@-moz-keyframes fly {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -1740px;
+  }
+}
+
+@keyframes float {
+  0% {
+    top: 50px;
+  }
+  50% {
+    top: 0;
+  }
+  100% {
+    top: 50px;
+  }
+}
+
+@-webkit-keyframes float {
+  0% {
+    top: 50px;
+  }
+  50% {
+    top: 0;
+  }
+  100% {
+    top: 50px;
+  }
+}
+
+@-moz-keyframes float {
+  0% {
+    top: 50px;
+  }
+  50% {
+    top: 0;
+  }
+  100% {
+    top: 50px;
+  }
+}
+
+@keyframes pass {
+  from {
+    left: -435px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes pass {
+  from {
+    left: -435px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@-moz-keyframes pass {
+  from {
+    left: -435px;
+  }
+  to {
+    left: 100%;
+  }
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlowUp hustlin'</title>
+    <script src="jquery.min.js" type="text/javascript"></script>
+    <script src="jquery.color-animation.min.css"></script>
+    <link href='bowlbyOneSC.css' rel='stylesheet' type='text/css'>
+    <link href='float.css' rel='stylesheet'>
+    <link href='float2.css' rel='stylesheet'>
+    <link href='switch.css' rel='stylesheet'>
+    <link href='neon.css' rel='stylesheet'>
+
+
+    <script type="text/javascript">
+        var blinkEffect = false;
+
+        function blink() {
+            $(".container")
+                .animate({backgroundColor: '#FF0000'}, 150)
+                .animate({backgroundColor: '#FF9500'}, 150)
+                .animate({backgroundColor: '#FFD200'}, 150)
+                .animate({backgroundColor: '#74E600'}, 150)
+                .animate({backgroundColor: '#1049A9'}, 150)
+                .animate({backgroundColor: '#4212AF'}, 150)
+                .animate({backgroundColor: '#A600A6'}, 150, function () {
+                    if (blinkEffect == true) {
+                        blink();
+                    }
+                });
+        }
+
+        function showWhite() {
+            blinkEffect = false;
+            var audio = $(".hustle")[0];
+            $(".white").fadeIn("fast");
+            audio.pause();
+        }
+
+        function hideWhite() {
+            blinkEffect = true;
+            blink();
+            var audio = $(".hustle")[0];
+            audio.addEventListener('ended', function () {
+                this.currentTime = 0;
+            }, false);
+            $(".white").fadeOut("fast");
+            audio.play();
+        }
+    </script>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Bowlby One SC', 'Helvetica', sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: white;
+            display: block;
+            z-index: 100;
+            text-align: center;
+        }
+
+        .white {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: white;
+            display: block;
+            z-index: 101;
+        }
+
+        .type {
+            position: fixed;
+            left: 50%;
+            top: 45%;
+            margin-left: -307px;
+            text-align: center;
+            color: black;
+            font-size: 128px;
+            font-weight: 900;
+            line-height: 142px;
+            z-index: 1000000000000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div hidden id="scene">
+        <ul data-friction-x="0.03" data-friction-y="0.05">
+            <li class="layer" id="layer-img" data-depth="0.15">
+                <div class="float2-img" id="img-float"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="fly-container" style="width:100%;overflow-x:hidden;">
+        <div class="pass">
+            <div class="way">
+                <div class="wood">
+                    <div class="fly-content-wood">
+                        <p style="font-size:3em; font-weight: 500;text-align:center;margin-top: 80px;color: black;">Damn son!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="white">
+    <div class="toggleWrapper" style="position: absolute;bottom: 10px;right: 10px;">
+        <input type="checkbox" id="magicSwitch" class="dn" onclick="$('#scene').toggle();"/>
+        <label for="magicSwitch" class="toggle"><span class="toggle__handler"></span></label>
+    </div>
+</div>
+
+<a class="type" onmouseover="hideWhite();" onmouseout="showWhite();">
+    <div class="fly-container">
+        <div class="way">
+            <div class="neon-blue">
+                FlowUp<br>Hu$tlin'
+            </div>
+        </div>
+    </div>
+</a>
+<audio class="hustle" preload loop>
+    <source src="hustle.mp3">
+    <source src="hustle.wav">
+</audio>
+
+</body>
+</html>

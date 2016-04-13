@@ -1,0 +1,49 @@
+#scene li {
+  list-style-type: none;
+}
+
+.float2-img {
+  position: absolute;
+  height: 100000px;
+  width: 100000px;
+  top: -8500px;
+  left: -8000px;
+  animation-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
+  animation-name: float2;
+  animation-iteration-count: infinite;
+}
+
+#img-float {
+  opacity: 0.35;
+  background: url('cartoon-penis-small.png') repeat;
+  animation-duration: 600s;
+}
+
+/*ANIMATIONS*/
+
+@keyframes float2 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(8000px, 4000px);
+  }
+}
+
+@-webkit-keyframes float2 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(8000px, 4000px);
+  }
+}
+
+@-moz-keyframes float2 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(8000px, 4000px);
+  }
+}
