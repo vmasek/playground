@@ -19,6 +19,7 @@
           this.lines.push(childNode);
         }
       }
+      TypePath.prototype.getPoints();
     }
 
     TypePath.prototype.getPoints = function () {
@@ -38,9 +39,10 @@
         path.pathData = pathData;
         results.push(this.paths.push(path));
       }
+      console.log(results);
       return results;
     };
-    
+
     TypePath.prototype.getPaths = function () {
       return this.paths;
     };
@@ -120,18 +122,11 @@
     return PhysicsDemo;
   }();
   window.onload = function (_this) {
-    console.log("loaded");
     return function () {
       var _paths, tp;
       tp = new TypePath(document.getElementById('svgElement'));
-      console.log(tp);
       _paths = tp.getPaths();
-      console.log('path');
-      console.log(_paths);
-
-      PhysicsDemo = new PhysicsDemo(_paths);
-      console.log(PhysicsDemo);
-      return PhysicsDemo;
+      return PhysicsDemo = new PhysicsDemo(_paths);
     };
   }(this);
 }.call(this));
